@@ -202,13 +202,23 @@ Null là rỗng, sử dụng để gán một biến đại diện cho không c�
         } else {
             return 1;
         }
+    };
+console.log(tinhGiaithua(3));
+// không đệ quy
+function tinhGiaithua(n){
+    var giai_thua = 1;
+    if ( n== 0 || n ==1){
+        return giai_thua;
+    } else{
+        for ( var i = 2; i<=n; i++){
+            giai_thua *=1;
+        }
+        return giai_thua;
     }
+};
 console.log(tinhGiaithua(3));
 // fibonacci : số tiếp theo bằng tổng 2 số trước 
 function fibonacci( n) {
-    f0 = 0,
-    f1 = 1,
-    fn = 1
     if (n < 0) {
         return -1;
     } else if (n == 0 || n == 1) {
@@ -217,8 +227,27 @@ function fibonacci( n) {
         return fibonacci(n - 1) + fibonacci(n - 2);
     }
 };
-console.log(fibonacci(5));
+console.log(fibonacci(3));
+// khong de quy
+function fibonacci( n) {
+     f0 = 0;
+     f1 = 1;
+     fn = 1;
 
+    if (n < 0) {
+        return -1;
+    } else if (n == 0 || n == 1) {
+        return n;
+    } else {
+        for (var i = 2; i < n; i++) {
+            f0 = f1;
+            f1 = fn;
+            fn = f0 + f1;
+        }
+    }
+    return fn;
+};
+console.log(fibonacci(2));
 
 
 
