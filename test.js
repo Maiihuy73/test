@@ -194,6 +194,31 @@ Underfined là không xác định, khi khai báo một biến mà chưa gán gi
 Null là rỗng, sử dụng để gán một biến đại diện cho không có giá trị
 
 */
+// Đệ quy : 1 hàm tự gọi lại chính nó
+// Tính giai thừa N! theo đệ quy
+    function  tinhGiaithua(n) {
+        if (n > 0) {
+            return n * tinhGiaithua(n - 1);
+        } else {
+            return 1;
+        }
+    }
+console.log(tinhGiaithua(3));
+// fibonacci : số tiếp theo bằng tổng 2 số trước 
+function fibonacci( n) {
+    f0 = 0,
+    f1 = 1,
+    fn = 1
+    if (n < 0) {
+        return -1;
+    } else if (n == 0 || n == 1) {
+        return n;
+    } else {
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+};
+console.log(fibonacci(5));
+
 
 
 
